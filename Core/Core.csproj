@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{989FF57C-A072-4289-A393-AF9CB4564EB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc">
+      <HintPath>..\packages\FluentValidation.MVC5.5.0.0.1\lib\Net45\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="Caching\CacheExtensions.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Caching\MemoryCacheManager.cs" />
+    <Compile Include="Caching\PerRequestCacheManager.cs" />
+    <Compile Include="CommonHelper.cs" />
+    <Compile Include="ComponentModel\GenericListTypeConverter.cs" />
+    <Compile Include="Configuration\ISettings.cs" />
+    <Compile Include="Configuration\NopConfig.cs" />
+    <Compile Include="Data\BaseDataProviderManager.cs" />
+    <Compile Include="Data\DataSettings.cs" />
+    <Compile Include="Data\DataSettingsHelper.cs" />
+    <Compile Include="Data\DataSettingsManager.cs" />
+    <Compile Include="Data\IDataProvider.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Domain\Catalog\Category.cs" />
+    <Compile Include="Domain\Customers\Customer.cs" />
+    <Compile Include="Domain\Customers\CustomerExtentions.cs" />
+    <Compile Include="Domain\Customers\CustomerLoginResults.cs" />
+    <Compile Include="EngineContext.cs" />
+    <Compile Include="EventBroker.cs" />
+    <Compile Include="IEngine.cs" />
+    <Compile Include="Infrastructure\AppDomainTypeFinder.cs" />
+    <Compile Include="Infrastructure\DependencyManagement\ContainerConfigurer.cs" />
+    <Compile Include="Infrastructure\DependencyManagement\ContainerManager.cs" />
+    <Compile Include="Infrastructure\DependencyManagement\AutofacRequestLifetimeHttpModule.cs" />
+    <Compile Include="Infrastructure\DependencyManagement\ComponentLifeStyle.cs" />
+    <Compile Include="Infrastructure\DependencyManagement\IDependencyRegistrar.cs" />
+    <Compile Include="Infrastructure\WebAppTypeFinder.cs" />
+    <Compile Include="IO\FileSystemSettings.cs" />
+    <Compile Include="IO\FileSystemStorageProvider.cs" />
+    <Compile Include="IO\IStorageFile.cs" />
+    <Compile Include="IO\IStorageFolder.cs" />
+    <Compile Include="IO\IStorageProvider.cs" />
+    <Compile Include="IStartupTask.cs" />
+    <Compile Include="ITypeFinder.cs" />
+    <Compile Include="IWebHelper.cs" />
+    <Compile Include="IWorkContext.cs" />
+    <Compile Include="NopEngine.cs" />
+    <Compile Include="NopException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton.cs" />
+    <Compile Include="WebHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

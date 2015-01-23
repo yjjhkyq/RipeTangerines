@@ -1,0 +1,68 @@
+﻿@model RipeTangerines.Models.Common.HeaderLinksModel
+
+<div class="header-links">
+    <ul>
+        @if (Model.IsAuthenticated)
+        {
+            <li><a href="@Url.RouteUrl("CustomerInfo")" class="account">@Model.CustomerEmailUsername</a></li>
+            <li><a href="@Url.RouteUrl("Logout")" class="ico-logout">注销</a></li>
+        }
+        else
+        {
+            <li><a href="@Url.RouteUrl("Register")" class="ico-register">注册</a></li>
+            <li><a href="@Url.RouteUrl("Login")" class="ico-login">登陆</a></li>
+        }
+      @*  @if (Model.AllowPrivateMessages)
+        {
+            <li><a href="@Url.RouteUrl("PrivateMessages", new { tab = "" })" class="ico-inbox">@T("PrivateMessages.Inbox")</a>
+                @Model.UnreadPrivateMessages</li>
+            if (!string.IsNullOrEmpty(Model.AlertMessage))
+            {
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    displayPopupNotification('@Html.Raw(HttpUtility.JavaScriptStringEncode(Model.AlertMessage))', 'success', false);
+                });
+            </script>
+            }
+        }
+        @if (Model.ShoppingCartEnabled)
+        {
+            <li id="topcartlink">
+                <a href="@Url.RouteUrl("ShoppingCart")" class="ico-cart">
+                    <span class="cart-label">@T("ShoppingCart")</span>
+                    <span class="cart-qty">@T("ShoppingCart.HeaderQuantity", Model.ShoppingCartItems)</span>
+                </a>
+            </li>
+        }
+        @if (Model.WishlistEnabled)
+        {
+            <li>
+                <a href="@Url.RouteUrl("Wishlist")" class="ico-wishlist">
+                    <span class="cart-label">@T("Wishlist")</span>
+                    <span class="wishlist-qty">@T("Wishlist.HeaderQuantity", Model.WishlistItems)</span>
+                </a>
+            </li>
+        }*@
+         
+    </ul>
+
+    @if (Model.ShoppingCartEnabled)
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.header').on('mouseenter', '#topcartlink', function () {
+                    $('#flyout-cart').addClass('active');
+                });
+                $('.header').on('mouseleave', '#topcartlink', function () {
+                    $('#flyout-cart').removeClass('active');
+                });
+                $('.header').on('mouseenter', '#flyout-cart', function () {
+                    $('#flyout-cart').addClass('active');
+                });
+                $('.header').on('mouseleave', '#flyout-cart', function () {
+                    $('#flyout-cart').removeClass('active');
+                });
+            });
+        </script>
+    }
+</div>

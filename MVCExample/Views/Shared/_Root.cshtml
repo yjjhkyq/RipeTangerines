@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Root.Head.cshtml";
+}
+
+@Html.Partial("_Notifications")
+@*@Html.Action("AdminHeaderLinks", "Common")*@
+<div class="master-wrapper-page">
+    @*@Html.Action("JavaScriptDisabledWarning", "Common")*@
+    <div class="master-wrapper-content">
+   @*     <script type="text/javascript">
+            AjaxCart.init(false, '.header-links .cart-qty', '.header-links .wishlist-qty', '#flyout-cart');
+        </script>*@
+        @Html.Partial("Header")
+        <div class="header-menu">
+            @Html.Action("TopMenu", "Catalog")
+        </div>
+       
+        @*ajax loading window*@
+        <div class="ajax-loading-block-window" style="display: none">
+            <div class="loading-image">
+            </div>
+        </div>
+        <div class="master-wrapper-main">
+            @RenderBody()
+        </div>
+       
+    
+    </div>
+    @*@Html.Action("Footer", "Common")*@
+</div>
+
