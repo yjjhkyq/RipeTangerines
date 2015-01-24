@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RipeTangerines", "MVCExample\RipeTangerines.csproj", "{20DE4DDE-B823-4A59-9821-DB6CCBBDB23D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RipeTangerines", "RipeTangerines\RipeTangerines.csproj", "{20DE4DDE-B823-4A59-9821-DB6CCBBDB23D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{7E564C2B-35AA-4088-B69C-8A325D2A2B96}"
 EndProject
