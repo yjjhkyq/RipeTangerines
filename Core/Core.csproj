@@ -74,9 +74,16 @@
     <Compile Include="Data\IDataProvider.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Domain\Catalog\Category.cs" />
+    <Compile Include="Domain\Catalog\Product.cs" />
+    <Compile Include="Domain\Catalog\ProductCategory.cs" />
+    <Compile Include="Domain\Catalog\ProductPicture.cs" />
     <Compile Include="Domain\Customers\Customer.cs" />
     <Compile Include="Domain\Customers\CustomerExtentions.cs" />
     <Compile Include="Domain\Customers\CustomerLoginResults.cs" />
+    <Compile Include="Domain\Media\Download.cs" />
+    <Compile Include="Domain\Media\MediaSettings.cs" />
+    <Compile Include="Domain\Media\Picture.cs" />
+    <Compile Include="Domain\Media\PictureType.cs" />
     <Compile Include="EngineContext.cs" />
     <Compile Include="EventBroker.cs" />
     <Compile Include="IEngine.cs" />

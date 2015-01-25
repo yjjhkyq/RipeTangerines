@@ -17,6 +17,7 @@ using System.Web.Mvc;
 using Service.Authentication;
 using Web.FrameWork.Mvc.Routes;
 using Core.Caching;
+using Service.Catalog;
 namespace Web.FrameWork
 {
     public class DependencyRegistrar : IDependencyRegistrar
@@ -60,6 +61,7 @@ namespace Web.FrameWork
             builder.RegisterType<FormsAuthenticationService>().As<IAuthenticationService>().InstancePerHttpRequest();
             builder.RegisterType<CustomerService>().As<ICustomerService>().InstancePerHttpRequest();
             builder.RegisterType<CustomerRegistrationService>().As<ICustomerRegistrationService>().InstancePerHttpRequest();
+            builder.RegisterType<CategoryService>().As<ICategoryService>().InstancePerHttpRequest();
 
             builder.RegisterType<RoutePublisher>().As<IRoutePublisher>().SingleInstance();
         }
