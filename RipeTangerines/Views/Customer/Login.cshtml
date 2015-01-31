@@ -1,0 +1,39 @@
+﻿@model RipeTangerines.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Root.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(x => x.Username)
+                @Html.EditorFor(x => x.Username)
+                @Html.ValidationMessageFor(x => x.Username)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(x => x.Password)
+                @Html.EditorFor(x => x.Password)
+                @Html.ValidationMessageFor(x => x.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="登陆" />
+            </td>
+
+        </tr>
+    </table> 
+}

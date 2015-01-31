@@ -1,0 +1,46 @@
+﻿@model RipeTangerines.Models.RegisterModel
+@{
+    ViewBag.Title = "注册";
+    Layout = "~/Views/Shared/_Root.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(x => x.UserName)
+                @Html.EditorFor(x => x.UserName)
+                @Html.ValidationMessageFor(x => x.UserName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(x => x.Email)
+                @Html.EditorFor(x => x.Email)
+                @Html.ValidationMessageFor(x => x.Email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(x => x.Password)
+                @Html.EditorFor(x => x.Password)
+                @Html.ValidationMessageFor(x => x.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(x => x.ConfirmPassword)
+                @Html.EditorFor(x => x.ConfirmPassword)
+                @Html.ValidationMessageFor(x => x.ConfirmPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="注册" />
+            </td>
+        </tr>
+    </table> 
+}
